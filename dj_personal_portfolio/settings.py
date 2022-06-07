@@ -25,9 +25,9 @@ SECRET_KEY = (
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "shei31416.pythonanywhere.com"]
+ALLOWED_HOSTS = ["shei31416.pythonanywhere.com"]
 
 
 # Application definition
@@ -129,3 +129,8 @@ MEDIA_ROOT = BASE_DIR / "media"
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+try:
+    from .local_settings import *
+except ImportError:
+    print("No local settings file. Defaulting to prod settings")
