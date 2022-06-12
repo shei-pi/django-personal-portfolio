@@ -22,19 +22,22 @@
   </head>
   <body style="background-color: #051726">
     <nav class="navbar" style="background-color: rgba(129, 255, 217, 0.6)">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img
-            src="{% static 'portfolio/tree-logo.svg' %}"
-            alt=""
-            width="30"
-            height="24"
-            class="d-inline-block align-text-top"
-          />
-          RobleLab
-        </a>
-        <div>
-          <a href="{% url 'blog:all_blogs' %}">Articulos</a>
+      <div class="d-flex justify-content-around">
+        <div class="p-2">
+          <a class="navbar-brand text-light" href="{% url 'home' %}">
+            <img
+              src="{% static 'portfolio/tree-logo.svg' %}"
+              alt=""
+              width="30"
+              height="24"
+              class="d-inline-block align-text-top link-light"
+            />RobleLab
+          </a>
+        </div>
+        <div class="p-2">
+          <a class="navbar-text text-light" href="{% url 'blog:all_blogs' %}"
+            >Artículos</a
+          >
         </div>
       </div>
     </nav>

@@ -1,14 +1,15 @@
-{% extends 'portfolio/base.html' %}
+{% extends 'portfolio/base.html' %} {%block content%}
+<h1 class="text-light">Posts</h1>
 
-{%block content%}
-<h1>Posts</h1>
-
-<h2>Shei has {{blog_posts.count}} entry{{blog_posts.count|pluralize}}</h2>
+<h2 class="text-light">
+  RobleLab has {{blog_posts.count}} entry{{blog_posts.count|pluralize}}
+</h2>
 {% for blog in blog_posts %}
 
-<a href="{% url 'blog:detail' blog.id %}"><h2>{{blog.title}}</h2></a>
-<h5>{{blog.publishing_date|date:'M d Y'|upper}}</h5>
-<p>{{blog.content|striptags|truncatechars:100}}</p>
+<a href="{% url 'blog:detail' blog.id %}"
+  ><h2 class="text-light">{{blog.title}}</h2></a
+>
+<h5 class="text-white-50">{{blog.publishing_date|date:'M d Y'|upper}}</h5>
+<p class="text-white-50">{{blog.content|striptags|truncatechars:100}}</p>
 
-{% endfor %}
-{% endblock %}
+{% endfor %} {% endblock %}
