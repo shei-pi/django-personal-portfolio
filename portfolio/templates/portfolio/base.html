@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,10 +13,31 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-
-    <title>Hello, world!</title>
+    <title>Roble LAB</title>
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="{% static 'portfolio/favicon-green.png' %}"
+    />
   </head>
-  <body>
+  <body style="background-color: #051726">
+    <nav class="navbar" style="background-color: rgba(129, 255, 217, 0.6)">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img
+            src="{% static 'portfolio/tree-logo.svg' %}"
+            alt=""
+            width="30"
+            height="24"
+            class="d-inline-block align-text-top"
+          />
+          RobleLab
+        </a>
+        <div>
+          <a href="{% url 'blog:all_blogs' %}">Articulos</a>
+        </div>
+      </div>
+    </nav>
     {% block content%}{% endblock %}
     <!-- Optional JavaScript; choose one of the two! -->
 
