@@ -19,11 +19,13 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 from portfolio.views import home
-
+from portfolio.views import Pong
 urlpatterns = [
     path('', home, name="home"),
     path('admin/', admin.site.urls),
     path('blog/', include('blog.urls')),
+    path('blog/', include('blog.urls')),
+    path('ping/', Pong.as_view(), name='ping')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
